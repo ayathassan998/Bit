@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../ProductContext/ProductContext";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -10,15 +11,18 @@ import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper";
 import colors from "./../../Mainstyles/ThemeColors.module.css";
 
 const Details = () => {
+  let { productItem } = useContext(ProductContext);
+
   let [searchParam, setSearchParam] = useSearchParams();
   let [productItemDetails, getproductItemDetails] = useState({});
   let [loading, setLoading] = useState(true);
+
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   let currentId = searchParam.get("id");
 
-  let secondExample = {
+  let starRating = {
     count: 5,
     color: "#AAAAAA",
     activeColor: "#FFCF09",
@@ -28,25 +32,14 @@ const Details = () => {
     emptyIcon: <i className="far fa-star" />,
     halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
-    onChange: (newValue) => {
-      console.log(`Example 2: new value is ${newValue}`);
-    },
   };
-
   const getDetails = async () => {
-    await axios
-      .get(`https://63189f2cf6b281877c71eab0.mockapi.io/products`)
-      .then((response) => {
-        let item = response.data.filter(
-          (i) => JSON.stringify(i.id) === JSON.stringify(currentId)
-        );
-        let data = item;
-        getproductItemDetails(data);
-        setLoading(false);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    let data = productItem;
+    let item = data.filter(
+      (i) => JSON.stringify(i.id) === JSON.stringify(currentId)
+    );
+    getproductItemDetails(item);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -58,7 +51,6 @@ const Details = () => {
       {!loading ? (
         <div className="container">
           <div className={`${style.sectionDetails}`}>
-
             <div className="row">
               <div className={`${style.detailsGallary} col-lg-6 col-12`}>
                 <div className="row">
@@ -75,9 +67,9 @@ const Details = () => {
                     >
                       {productItemDetails[0]?.img.map((item, index) => {
                         return (
-                            <SwiperSlide key={index}>
-                              <img src={item} />
-                            </SwiperSlide> 
+                          <SwiperSlide key={index}>
+                            <img src={item} />
+                          </SwiperSlide>
                         );
                       })}
                     </Swiper>
@@ -91,16 +83,16 @@ const Details = () => {
                         delay: 2500,
                         disableOnInteraction: false,
                       }}
+                      thumbs={{ swiper: thumbsSwiper!== null ? thumbsSwiper : 0 }} 
                       
-                      //thumbs={{ swiper: thumbsSwiper }}
-                      modules={[Autoplay,FreeMode, Navigation, Thumbs]}
+                      modules={[Autoplay, FreeMode, Navigation, Thumbs]}
                       className="viewdImgSwiper"
                     >
                       {productItemDetails[0]?.img.map((item, index) => {
                         return (
-                            <SwiperSlide key={index}>
-                              <img src={item} />
-                            </SwiperSlide>
+                          <SwiperSlide key={index}>
+                            <img src={item} />
+                          </SwiperSlide>
                         );
                       })}
                     </Swiper>
@@ -124,7 +116,7 @@ const Details = () => {
 
                 <div className={`d-flex align-items-center mt-3 mb-2`}>
                   <div className={`${style.rate}`}>
-                    <ReactStars {...secondExample} />
+                    <ReactStars {...starRating} />
                   </div>
 
                   <div className={`${style.reviews}`}>
@@ -302,7 +294,6 @@ const Details = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       ) : (

@@ -16,6 +16,7 @@ export default function Product() {
     });
   };
 
+
   return (
     <>
       <div className="product d-lg-block d-none ">
@@ -103,7 +104,7 @@ export default function Product() {
                 <div className="col-6" key={index}>
                   <div
                     className={`${style.product_item}`}
-                    onClick={() => goToDetails(product.id)}
+                    onClick={() =>  {goToDetails(product.id);}  }
                   >
                     <div className={`${style.imgWrapper}`}>
                       <img className="w-100" src={product.img[0]} alt="" />

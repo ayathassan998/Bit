@@ -8,6 +8,8 @@ export function ProductContextProvider(props) {
   let [sliderImg, getSliderImg] = useState([]);
   let [productItem, getproductItem] = useState([]);
 
+  
+
 const getSliderItems=async()=> {
     let { data } = await axios.get("https://63189f2cf6b281877c71eab0.mockapi.io/slider");
     getSliderImg(data);
