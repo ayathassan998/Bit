@@ -1,0 +1,31 @@
+.textWhite {
+  color: #fff;
+}
+
+.textGray {
+  color: #a7a9ac;
+}
+
+.textSecondaryGray {
+  color: #aaaaaa;
+}
+
+.backGray {
+  background-color: #f2f2f2;
+}
+
+.textGreen {
+  color: #36ba5c;
+}
+
+.textRed {
+  color: #d63030;
+}
+
+.textBlue {
+  color: #0d4eb7;
+}
+
+.backBlue {
+  background-color: #0d4eb7 !important;
+}

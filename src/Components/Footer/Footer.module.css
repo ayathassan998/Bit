@@ -1,0 +1,38 @@
+
+/*###################### footer_section ######################*/
+.footer{
+    background-color: #000;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+  }
+  
+  .footer .footerRow{
+   margin: 0;
+  }
+  
+  .footer img{
+    height: 70px;
+  }
+
+  .footer .copyRight {
+    padding-top: 2rem;
+    font-size: 14px;
+    opacity: 70%;
+  }
+  
+  .footer .copyRight p{
+    margin: 0;
+  }
+
+
+  @media (max-width :768px) {
+
+    .footer img{
+      height: 50px;
+    }
+
+    .footer .copyRight {
+      font-size: 12px;
+    }
+  }

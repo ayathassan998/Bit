@@ -1,0 +1,249 @@
+body {
+  margin: 0;
+  font-family: SF_Pro_Display_Regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+@font-face {
+  font-family: SF_Pro_Display_Regular;
+  src: url(../Fonts/SF-Pro-Display-Regular.woff) format("woff"),
+    url(../Fonts/SF-Pro-Display-Regular.ttf) format("truetype");
+}
+
+.fa,
+.fa-brands,
+.fa-classic,
+.fa-regular,
+.fa-sharp,
+.fa-solid,
+.fab,
+.far,
+.fas {
+  font-size: 20px;
+}
+
+/*###################### Navbar_section ######################*/
+.navbar {
+  padding: 0;
+}
+
+.nav-link,
+.navbar-toggler {
+  color: #fff !important;
+}
+
+.navbar-toggler {
+  background-color: #fff !important;
+}
+
+.nav-link {
+  text-align: center;
+  font: normal normal medium 16px/19px SF Pro Display !important;
+  letter-spacing: 0px;
+  opacity: 1;
+  padding: 6px;
+}
+
+.nav-item {
+  padding: 0 0.5rem;
+}
+
+.navbar-brand img {
+  top: 9px;
+  left: 380px;
+  width: 41px !important;
+  height: 67px;
+}
+
+.nav-item img {
+  top: 32px;
+  left: 1461px;
+  width: 24px !important;
+  height: 24px;
+}
+
+hr {
+  margin: initial !important;
+  border: 1px solid #ccc;
+  opacity: 1 !important;
+}
+
+/*###################### Slider_carousel_HomePage ######################*/
+
+.slider .carousel .thumbs {
+  display: none;
+}
+
+.slider .carousel-indicators {
+  background-color: #fff;
+  text-align: center;
+  margin: auto;
+  border-radius: 16px;
+  margin-bottom: 0.5rem;
+  left: 42%;
+  right: 42%;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.slider .carousel-indicators [data-bs-target] {
+  background-color: #d1d3d4;
+  width: 0;
+  height: 0;
+  padding: 4px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 12px;
+}
+
+.slider .carousel-indicators .active {
+  background-color: #a7a9ac;
+  padding: 4px;
+}
+
+.slider .carousel-control-next,
+.slider .carousel-control-prev {
+  z-index: 9999;
+  background-color: #ffffff;
+  opacity: 80%;
+  border-radius: 50%;
+  width: 3%;
+  height: 12%;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+
+.slider .carousel-control-next-icon,
+.slider .carousel-control-prev-icon {
+  background-size: 20px;
+}
+
+.slider .carousel-control-next-icon {
+  background-image: url("../../public/images/arrow-right.png");
+}
+
+.slider .carousel-control-prev-icon {
+  background-image: url("../../public/images/arrow-left.png");
+}
+
+/*###################### product_carousel_section ######################*/
+.product .swiper {
+  padding: 0 0 6% 0;
+}
+
+.product .swiper-pagination {
+  width: 12%;
+  bottom: 6px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.product .swiper-button-next,
+.product .swiper-button-prev {
+  top: initial;
+  bottom: 0;
+}
+
+.product .swiper-button-next {
+  right: 40%;
+}
+
+.product .swiper-button-prev {
+  left: 40%;
+}
+
+.product .swiper-button-prev,
+.product .swiper-button-next {
+  color: #000;
+  opacity: 80%;
+  border: 1px solid #dfe1e2;
+  border-radius: 50%;
+  width: 3%;
+  height: 8%;
+}
+
+.product .swiper-button-prev:after,
+.product .swiper-button-next:after {
+  font-size: 18px;
+}
+
+.product .swiper-pagination-bullet-active {
+  background: #a7a9ac;
+}
+
+.product .row {
+  padding: 0 2rem;
+}
+
+.product .row .col-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*###################### Details_carousel_section ######################*/
+.allGallarySwiper .swiper-wrapper .swiper-slide {
+  height: 100% !important;
+  text-align: left;
+}
+
+.allGallarySwiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+.viewdImgSwiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+
+  padding: 0 3rem 1rem 1rem;
+}
+
+.allGallarySwiper .swiper-button-prev,
+.allGallarySwiper .swiper-button-next,
+.viewdImgSwiper .swiper-button-prev,
+.viewdImgSwiper .swiper-button-next {
+  display: none;
+}
+
+/*###################### @media ######################*/
+@media (max-width: 992px) {
+  .slider .carousel-control-next,
+  .slider .carousel-control-prev {
+    width: 4%;
+    height: 15%;
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background-size: 18px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider .carousel-control-next,
+  .slider .carousel-control-prev {
+    display: none;
+  }
+
+  .slider .carousel-indicators {
+    left: 35%;
+    right: 35%;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    margin: 0 8px;
+  }
+}
